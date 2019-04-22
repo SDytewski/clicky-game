@@ -7,15 +7,39 @@ import friends from "./friends.json";
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends
+
+    friends,
+    score: 0,
+    highscore: 0
   };
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  };
+  // removeFriend = id => {
+  //   // Filter this.state.friends for friends with an id not equal to the id being removed
+  //   const friends = this.state.friends.filter(friend => friend.id !== id);
+  //   // Set this.state.friends equal to the new friends array
+  //   this.setState({ friends });
+  // };
+
+  clickCount = id => {
+    let friends = this.state.friends;
+
+
+
+     
+
+      this.setState({ friends, score: friends.length, status: " " });
+
+      for (let i = friends.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [friends[i], friends[j]] = [friends[j], friends[i]];
+      }
+    
+  }
+
+
+
+
+
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
@@ -24,13 +48,12 @@ class App extends Component {
         <Title>Friends List</Title>
         {this.state.friends.map(friend => (
           <FriendCard
-            removeFriend={this.removeFriend}
+
             id={friend.id}
-            key={friend.id}
+            //      key={friend.id}
             name={friend.name}
             image={friend.image}
-            occupation={friend.occupation}
-            location={friend.location}
+            clickCount={this.clickCount}
           />
         ))}
       </Wrapper>
