@@ -4,6 +4,7 @@ import "./style.css";
 function FriendCard(props) {
   return (
     <div className="card">
+
       <div className="img-container">
         <img alt={props.name} src={props.image} />
       </div>
@@ -20,7 +21,10 @@ function FriendCard(props) {
           </li>
         </ul>
       </div>
-      <span onClick={() => props.clickCount(props.id)} className="remove">
+      <span onClick={() => props.shuffle(props.id) } className="remove">
+      
+     
+
         𝘅
       </span>
     </div>
