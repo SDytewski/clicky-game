@@ -21,7 +21,7 @@ function FriendCard(props) {
           </li>
         </ul>
       </div>
-      <span onClick={() => props.shuffle(props.id) } className="remove">
+      <span onClick={() => props.handleClick(props.id) } className="remove">
       
      
 
@@ -30,5 +30,14 @@ function FriendCard(props) {
     </div>
   );
 }
+// const FriendCard = props => (
+
+//   <div
+//     role="img"
+//     style={{backgroungImage: `url("${props.image}")`}}
+//     onClick={() => props.handleClick(props.id)}
+
+//   />
+// )
 
 export default FriendCard;

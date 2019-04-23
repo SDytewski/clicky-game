@@ -14,6 +14,10 @@ class App extends Component {
     highscore: 0
   };
 
+  componentDidMount(){
+    this.setState({friends: this.shuffle(this.state.friends)})
+  }
+
   
   removeFriend = id => {
     // Filter this.state.friends for friends with an id not equal to the id being removed
@@ -63,14 +67,55 @@ class App extends Component {
 
     }
 
+    //If they click the same one twice, they lose
+
+
+    //if they click the
   
-   var randomFriends = friends[Math.floor(Math.random() * friends.length)];
-    console.log(randomFriends)
+  //  var randomFriends = friends[Math.floor(Math.random() * friends.length)];
+  //   console.log(randomFriends)
 
    // if(randomFriends===)
     
 
 
+  }
+  handleItemClick = id => {
+    let guessedCorrectly = false;
+    const newFriend = this.state.friends.map(item =>{
+      const newItem = {...item };
+      if(newItem.id === id){
+          if(!newItem.clicked){
+            newItem.clicked = true;
+            guessedCorrectly = true;
+          }
+      }
+      return newItem;
+
+    })
+    guessedCorrectly ? this.handleCorrectGuess(newFriend) : this.handleIncorrectGuess(newFriend);
+
+  }
+  handleCorrectGuess = newFriend => {
+    const { highscore, score } = this.state;
+    const newScore = score+1;
+    const newTopScore = newScore > highscore ? newScore  :  highscore;
+    this.setState({
+      friends: this.shuffle(newFriend),
+      score: newScore,
+      highscore: newTopScore
+    })
+
+  }
+  handleIncorrectGuess = newFriend => {
+    this.setState({
+      friends: this.reSet(newFriend),
+      score: 0
+    })
+  }
+  reSet = newFriend => {
+    const resetData = newFriend.map(item => ({...item, clicked: false}));
+    return this.shuffle(resetData);
   }
 
 
@@ -81,6 +126,7 @@ class App extends Component {
       <Wrapper>
         <Title>Friends List</Title>
         <h2>Score: {this.state.score} </h2>
+        <h2>High Score: {this.state.highscore} </h2>
         {this.state.friends.map(friend => (
           <FriendCard
 
@@ -89,8 +135,9 @@ class App extends Component {
             name={friend.name}
             image={friend.image}
             shuffle={this.shuffle}
-            findFriend={this.findFriend}
-            removeFriend={this.removeFriend}
+            // findFriend={this.findFriend}
+            // removeFriend={this.removeFriend}
+            handleClick = {this.handleItemClick}
 
           />
         ))}
