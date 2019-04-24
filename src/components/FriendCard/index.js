@@ -21,7 +21,7 @@ function FriendCard(props) {
           </li>
         </ul>
       </div>
-      <span onClick={() => props.handleClick(props.id) } className="remove">
+      <span onClick={() => props.clickCount(props.id)} className="remove">
       
      
 
@@ -30,6 +30,9 @@ function FriendCard(props) {
     </div>
   );
 }
+
+// Tutor session Code
+
 // const FriendCard = props => (
 
 //   <div
