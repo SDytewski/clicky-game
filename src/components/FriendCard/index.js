@@ -33,16 +33,5 @@ function FriendCard(props) {
   );
 }
 
-// Tutor session Code
-
-// const FriendCard = props => (
-
-//   <div
-//     role="img"
-//     style={{backgroungImage: `url("${props.image}")`}}
-//     onClick={() => props.handleClick(props.id)}
-
-//   />
-// )
 
 export default FriendCard;

@@ -1,19 +1,31 @@
-# clicky-game
+# Cartoon Clicky Game
 
-In this game I used REACT.
+In this application I used REACT to great a dynamic clicky game. REACT uses JSON data and JSX to manipulate HTML for its code. To put it simply REACT is a JavaScript library. I can make changes live without having to reload the web browser because of REACT's DOM manipulation. CSS was added for styling. 
 
-This application renders different images to the screen. Each image listens for click events.  The great thing about REACT is there is no need for http requests.  All of the movement is happening dynamically by using several components.  This way the app moves quicker.
+This application renders different images to the screen. Each cartoon character image listens for click events on its "X" in the upper right corner.  All of the movement is happening dynamically by using several components.  This way the app moves quicker.
 
-*Future Development*
+![first-prompt](public/images/cartoon1.png)
 
-1. The application should keep track of the user's score. The user's score should be incremented when clicking an image for the first time. The user's score should be reset to 0 if they click the same image more than once.
+**Example 1** This application is one page.  The landing page shows "Score" and "Highscore." The object of the game is to click a character to increase your score.  If a user clicks the same character twice then the score will reset to 0. Try to avoid clicking the same cartoon character twice to set a "Highscore." There are 12 characters on the screen, therefore 12 is the highest score than can be achieved.
 
-2. Once the user's score is reset after an incorrect guess, the game should restart.
+![first-prompt](public/images/cartoon2.png)
 
-3. There will also be a "highscore" that tracks the users best score without clicking the same image twice.
+**Example 2**  I have clicked "Tommy Pickles" and now all the characters have reshuffled.  "Tommy Pickles" has moved to a new a spot. I have a score of 1 and since I've just started this game I have set the highest score to 1.
 
+![first-prompt](public/images/cartoon3.png)
 
-Right now the score resets to 0 after 12 clicks.  You can click any of the characters or "friends" on the screen on the "x" and the score goes up by "1."  Each time a character is clicked then the friends get shuffled.  
+**Example 3** I have gotten my score up to 4 and have set the highest score to 4.  However what happens if I click "Tommy Pickles" again?
+
+![first-prompt](public/images/cartoon4.png)
+
+**Example 4** I clicked "Tommy Pickles" again and my score was reset to 0 and all the characters are reshuffled.  The highest score is still set to 4 because that is the highest number achieved while I played the game. If I reload the browser it would reset the score and highest score back to 0.    
+
+# Conclusion
+
+This application shows my use of REACT to render dynamically moving images on a screen.  It also shows the use of JavaScript functions and logic to create a game.  REACT is the same technology used by Facebook to create a fast easy user experience. Changes happen live without making http requests. This is modern Front-End Development at its best.
+
+1. deployed site: https://clicky-game-steve.herokuapp.com/
+2. previous version of game: https://sdytewski.github.io/clicky-game/
 
 
 
