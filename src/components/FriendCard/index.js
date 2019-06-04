@@ -15,18 +15,20 @@ function FriendCard(props) {
           </li>
           <li>
             
+            
           </li>
           <li>
             
           </li>
         </ul>
       </div>
-      <span onClick={() => props.clickCount(props.id)} className="remove">
+      <span onClick={() => props.handleClick(props.id)} className="remove">
       
      
 
         𝘅
       </span>
+
     </div>
   );
 }

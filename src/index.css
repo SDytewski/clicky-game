@@ -8,3 +8,27 @@ html, body, #root {
   margin: 0;
   height: 100%;
 }
+
+h1 {
+  font-size: 2rem;
+  border-color: 15px;
+  padding: 5px;
+  text-align: center;
+
+
+}
+
+h2 {
+  background: rgb(219, 134, 134);
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: 3px solid black;
+  position:fixed;
+  z-index: 5;
+  font-size: 2rem;
+  margin-top: -8px;
+
+}

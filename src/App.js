@@ -13,11 +13,37 @@ class App extends Component {
     highscore: 0
   };
 
+  componentDidMount() {
+    this.setState({ friends: this.shuffleData(this.state.friends) });
+  }
+
   
+  handleCorrectGuess = newData => {
+    const { highscore, score } = this.state;
+    const newScore = score + 1;
+    const newTopScore = Math.max(newScore, highscore);
+
+    this.setState({
+      friends: this.shuffleData(newData),
+      score: newScore,
+      highscore: newTopScore
+    });
+  };
+
+  handleIncorrectGuess = friends => {
+    this.setState({
+      friends: this.resetData(friends),
+      score: 0
+    });
+  };
+
   
 
+  resetData = friends => {
+    const resetData = friends.map(item => ({ ...item, clicked: false }));
+    return this.shuffleData(resetData);
+  };
 
-  
 
   //Shuffles our friends
   clickCount = id => {
@@ -25,18 +51,16 @@ class App extends Component {
  
     let friends = this.state.friends;
   //  console.log(this.state.friends)
-
-
-    this.setState({ friends, score: friends.length, status: " " });
-
-
-
-      this.setState({ friends, score: friends.length, status: " " });
+    this.setState({ 
+      friends,
+      score: friends.length, 
+      status: " "
+     });
     this.setState({
       score: this.state.score + 1
     });
 
-
+  //Resets if you reach 12 
 
     if (this.state.score === 12) {
 
@@ -44,15 +68,42 @@ class App extends Component {
 
     }
 
-    for (let i = friends.length - 1; i > 0; i--) {
+  };
+
+    shuffleData = friends => {
+      let i = friends.length - 1;
+      while( i > 0) {
       let j = Math.floor(Math.random() * (i + 1));
       // [friends[i], friends[j]] = [friends[j], friends[i]];
       const temp = friends[i]
       friends[i] = friends[j]
-      friends[j] = temp
+      friends[j] = temp;
+      i--;
 
     }
+    return friends;
 
+  };
+
+
+  handleItemClick = id => {
+    let guessedCorrectly = false;
+    const newData = this.state.friends.map(item => {
+      const newItem = { ...item };
+      if (newItem.id === id) {
+        if (!newItem.clicked) {
+          newItem.clicked = true;
+          guessedCorrectly = true;
+        }
+      }
+      return newItem;
+    });
+    guessedCorrectly
+      ? this.handleCorrectGuess(newData)
+      : this.handleIncorrectGuess(newData);
+  };
+
+  //if you click on a friend that has already been selected, the game is reset and cards reordered
 
    
 
@@ -60,16 +111,14 @@ class App extends Component {
 
 
 
-  }
-
-
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       <Wrapper>
-        <Title>Friends List</Title>
-        <h2>Score: {this.state.score} </h2>
+        <Title>CARTOON CLICKY GAME</Title>
+        <h1>Click the "X" on an image to earn points, but don't click on any more than once!</h1>
+        <h2>Score: {this.state.score} | highScore: {this.state.highscore}</h2>
         {this.state.friends.map(friend => (
           <FriendCard
 
@@ -78,7 +127,8 @@ class App extends Component {
             key={friend.id}
             name={friend.name}
             image={friend.image}
-            clickCount={this.clickCount}
+            // clickCount={this.clickCount}
+            handleClick={this.handleItemClick}
          
             findFriend={this.findFriend}
             removeFriend={this.removeFriend}
