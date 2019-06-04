@@ -26,6 +26,26 @@
 @media (min-width: 400px) {
   h1 {
       font-size: 2px;
+      width: 100%;
+      text-align: center;
+        
+      color: rgb(255, 255, 255);
+      margin-bottom: 50px;
+      background-color:#2A77AE;
+      padding: 50px;
+     
+      text-shadow: 5px 2px 2px rgba(122, 114, 114, 0.4); 
+      
+      text-transform: uppercase;
+      text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.7);
+     
+     
+      font-family: 'Bangers', cursive;
+      font-weight: bold;
+      
+      background-image: linear-gradient(to bottom right, rgb(95, 162, 209), firebrick);
+      
+      margin-left: -3px;
     
   }
 }
@@ -36,6 +56,26 @@
 @media (min-width: 600px) {
   .title {
       font-size: 3.0rem;
+      width: 100%;
+      text-align: center;
+        
+      color: rgb(255, 255, 255);
+      margin-bottom: 50px;
+      background-color:#2A77AE;
+      padding: 50px;
+     
+      text-shadow: 5px 2px 2px rgba(122, 114, 114, 0.4); 
+      
+      text-transform: uppercase;
+      text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.7);
+     
+     
+      font-family: 'Bangers', cursive;
+      font-weight: bold;
+      
+      background-image: linear-gradient(to bottom right, rgb(95, 162, 209), firebrick);
+      
+      margin-left: -3px;
     
   }
 }
@@ -43,6 +83,26 @@
 @media (min-width: 800px) {
   .title {
       font-size: 1.9rem;
+      width: 100%;
+      text-align: center;
+        
+      color: rgb(255, 255, 255);
+      margin-bottom: 50px;
+      background-color:#2A77AE;
+      padding: 50px;
+     
+      text-shadow: 5px 2px 2px rgba(122, 114, 114, 0.4); 
+      
+      text-transform: uppercase;
+      text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.7);
+     
+     
+      font-family: 'Bangers', cursive;
+      font-weight: bold;
+      
+      background-image: linear-gradient(to bottom right, rgb(95, 162, 209), firebrick);
+      
+      margin-left: -3px;
   }
 }
 
@@ -50,6 +110,26 @@
   .title {
     
       font-size: 4.5rem;
+      width: 100%;
+      text-align: center;
+        
+      color: rgb(255, 255, 255);
+      margin-bottom: 50px;
+      background-color:#2A77AE;
+      padding: 50px;
+     
+      text-shadow: 5px 2px 2px rgba(122, 114, 114, 0.4); 
+      
+      text-transform: uppercase;
+      text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.7);
+     
+     
+      font-family: 'Bangers', cursive;
+      font-weight: bold;
+      
+      background-image: linear-gradient(to bottom right, rgb(95, 162, 209), firebrick);
+      
+      margin-left: -3px;
      
   }
 
