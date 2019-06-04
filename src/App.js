@@ -118,7 +118,7 @@ class App extends Component {
       <Wrapper>
         <Title>CARTOON CLICKY GAME</Title>
         <h1>Click the "X" on an image to earn points, but don't click on any more than once!</h1>
-        <h2>Score: {this.state.score} | highScore: {this.state.highscore}</h2>
+        <h2>Score: {this.state.score} Highscore: {this.state.highscore}</h2>
         {this.state.friends.map(friend => (
           <FriendCard
 
